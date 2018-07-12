@@ -8,7 +8,8 @@ html {
 
 body {
     background: #010214;
-    font-family: 'Titillium Web', sans-serif;
+
+    font-family: 'Century Gothic', sans-serif;
 }
 
 a {
@@ -17,7 +18,7 @@ a {
     transition: .5s ease;
 }
 a:hover {
-    color: #179b77;
+    color: #ffffff;
 }
 
 .form {
@@ -145,6 +146,7 @@ textarea {
 }
 
 .button {
+    font-family: 'Century Gothic', sans-serif;
     border: 0;
     outline: none;
     border-radius: 0;

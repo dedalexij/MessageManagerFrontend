@@ -4,11 +4,13 @@
 
 html {
     overflow-y: scroll;
+
 }
 
 body {
     background: #010214;
-    font-family: 'Titillium Web', sans-serif;
+    font-family: 'Century Gothic', sans-serif;
+    color: #ffffff;
 }
 
 a {
@@ -145,6 +147,7 @@ textarea {
 }
 
 .button {
+    font-family: 'Century Gothic', sans-serif;
     border: 0;
     outline: none;
     border-radius: 0;
