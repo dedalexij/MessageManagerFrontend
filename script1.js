@@ -83,3 +83,49 @@ $(function(){
 $( window ).resize(function(){
     $( ".file_upload input" ).triggerHandler( "change" );
 });
+
+var Phone = document.getElementById("Phone");
+var SMessage = document.getElementById("SmsMessage");
+var SmsSenderBtn = document.getElementById("SmsSenderBtn");
+var Guid = function guid() {
+    function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000)
+            .toString(16)
+            .substring(1);
+    }
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+}
+const SmsSenderConfirm = () => {
+    var sms_message_json = JSON.stringify({
+        Phone: Phone.value,
+        Message: SMessage.value,
+        Guid: Guid.value
+    })
+    console.log(sms_message_json)
+}
+SmsSenderBtn.onclick = SmsSenderConfirm;
+
+var SenderEmail = document.getElementById("SenderEmail");
+var RecipientEmail = document.getElementById("RecipientEmail");
+var Theme = document.getElementById("Theme");
+var EMessage = document.getElementById("Message");
+var EmailSenderBtn = document.getElementById("EmailSenderBtn");
+var Guid = function guid() {
+    function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000)
+            .toString(16)
+            .substring(1);
+    }
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+}
+const EmailSenderConfirm = () => {
+    var email_message_json = JSON.stringify({
+        SenderEmail: SenderEmail.value,
+        RecipientEmail: RecipientEmail.value,
+        Theme: Theme.value,
+        EMessage: EMessage.value,
+        Guid: Guid.value
+    })
+    console.log(email_message_json)
+}
+EmailSenderBtn.onclick = EmailSenderConfirm;

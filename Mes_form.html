@@ -30,34 +30,34 @@
                         <label>
                             Email Address of the sender<span class="req">*</span>
                         </label>
-                        <input type="email" required autocomplete="off"/>
+                        <input type="email" id="SenderEmail" required autocomplete="off"/>
                     </div>
 
                     <div class="field-wrap">
                         <label>
                             Email Address of the recipient<span class="req">*</span>
                         </label>
-                        <input type="email" multiple required autocomplete="off"/>
+                        <input type="email" id="RecipientEmail" multiple required autocomplete="off"/>
                     </div>
 
                 <div class="field-wrap">
                     <label>
                         Theme<span class="req">*</span>
                     </label>
-                    <input type="text"required autocomplete="off"/>
+                    <input type="text" id="Theme" required autocomplete="off"/>
                 </div>
                 <div class="field-wrap">
                     <label>
                         Message<span class="req">*</span>
                     </label>
-                    <input type="text"required autocomplete="off"/>
+                    <input type="text" id="Message" required autocomplete="off"/>
                 </div>
                 <div class="file_upload">
                     <button type="button">Choose</button>
                     <div>File not selected</div>
                     <input type="file">
                 </div>
-                <button type="submit" class="button button-block"/>Send</button>
+                <button type="submit" class="button button-block" id="EmailSenderBtn"/>Send</button>
 
             </form>
 
@@ -72,24 +72,18 @@
                     <label>
                         Input phone of reciever<span class="req">*</span>
                     </label>
-                    <input type="tel" multiple pattern="8-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" required autocomplete="off"/>
-                </div>
-                <div class="field-wrap">
-                    <label>
-                        Theme<span class="req">*</span>
-                    </label>
-                    <input type="text"required autocomplete="off"/>
+                    <input type="tel" multiple pattern="8-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" id="Phone" required autocomplete="off"/>
                 </div>
                 <div class="field-wrap">
                     <label>
                         Message<span class="req">*</span>
                     </label>
-                    <input type="text"required autocomplete="off"/>
+                    <input type="text" id="SmsMessage" required autocomplete="off"/>
                 </div>
 
 
 
-                <button class="button button-block"/>SEND</button>
+                <button class="button button-block" id="SmsSenderBtn"/>SEND</button>
 
             </form>
 
