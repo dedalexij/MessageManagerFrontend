@@ -13,18 +13,18 @@ body {
 
 a {
     text-decoration: none;
-    color: #ffffff;
+    color: #1ab188;
     transition: .5s ease;
 }
 a:hover {
-    color: #ffffff;
+    color: #179b77;
 }
 
 .form {
-    background: 	#000000;
+    background: rgba(19, 35, 47, 0.9);
     padding: 40px;
     max-width: 600px;
-    margin: 300px auto;
+    margin: 100px auto;
     border-radius: 4px;
     box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
 }
@@ -43,7 +43,7 @@ a:hover {
     display: block;
     text-decoration: none;
     padding: 15px;
-    background: #1E90FF;
+    background: rgba(160, 179, 176, 0.25);
     color: #a0b3b0;
     font-size: 20px;
     float: left;
@@ -53,11 +53,11 @@ a:hover {
     transition: .5s ease;
 }
 .tab-group li a:hover {
-    background: #191970;
+    background: #179b77;
     color: #ffffff;
 }
 .tab-group .active a {
-    background: #00008B;
+    background: #1ab188;
     color: #ffffff;
 }
 
@@ -74,8 +74,8 @@ h1 {
 
 label {
     position: absolute;
-    -webkit-transform: translateY(6px);
-    transform: translateY(6px);
+    -webkit-transform: translateY(3px);
+    transform: translateY(3px);
     left: 13px;
     color: rgba(255, 255, 255, 0.5);
     transition: all 0.25s ease;
@@ -85,12 +85,12 @@ label {
 }
 label .req {
     margin: 2px;
-    color: #1E90FF;
+    color: #1ab188;
 }
 
 label.active {
-    -webkit-transform: translateY(50px);
-    transform: translateY(50px);
+    -webkit-transform: translateY(-16px);
+    transform: translateY(-16px);
     left: 2px;
     font-size: 14px;
 }
@@ -117,7 +117,7 @@ input, textarea {
 }
 input:focus, textarea:focus {
     outline: 0;
-    border-color: #1E90FF;
+    border-color: #1ab188;
 }
 
 textarea {
@@ -153,13 +153,13 @@ textarea {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: .1em;
-    background: #1E90FF;
+    background: #1ab188;
     color: #ffffff;
     transition: all 0.5s ease;
     -webkit-appearance: none;
 }
 .button:hover, .button:focus {
-    background: #0000CD;
+    background: #179b77;
 }
 
 .button-block {

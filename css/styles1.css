@@ -13,18 +13,18 @@ body {
 
 a {
     text-decoration: none;
-    color: #1E90FF;
+    color: #1ab188;
     transition: .5s ease;
 }
 a:hover {
-    color: #0000CD;
+    color: #179b77;
 }
 
 .form {
-    background: 	#000000;
-    padding: 40px;
+    background: rgba(19, 35, 47, 0.9);
+    padding: 50px;
     max-width: 600px;
-    margin: 300px auto;
+    margin: auto;
     border-radius: 4px;
     box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
 }
@@ -43,7 +43,7 @@ a:hover {
     display: block;
     text-decoration: none;
     padding: 15px;
-    background: #1E90FF;
+    background: rgba(160, 179, 176, 0.25);
     color: #a0b3b0;
     font-size: 20px;
     float: left;
@@ -53,11 +53,11 @@ a:hover {
     transition: .5s ease;
 }
 .tab-group li a:hover {
-    background: #191970;
+    background: #179b77;
     color: #ffffff;
 }
 .tab-group .active a {
-    background: #00008B;
+    background: #1ab188;
     color: #ffffff;
 }
 
@@ -74,8 +74,8 @@ h1 {
 
 label {
     position: absolute;
-    -webkit-transform: translateY(6px);
-    transform: translateY(6px);
+    -webkit-transform: translateY(3px);
+    transform: translateY(3px);
     left: 13px;
     color: rgba(255, 255, 255, 0.5);
     transition: all 0.25s ease;
@@ -85,12 +85,12 @@ label {
 }
 label .req {
     margin: 2px;
-    color: #1E90FF;
+    color: #1ab188;
 }
 
 label.active {
-    -webkit-transform: translateY(50px);
-    transform: translateY(50px);
+    -webkit-transform: translateY(-16px);
+    transform: translateY(-16px);
     left: 2px;
     font-size: 14px;
 }
@@ -117,7 +117,7 @@ input, textarea {
 }
 input:focus, textarea:focus {
     outline: 0;
-    border-color: #1E90FF;
+    border-color: #1ab188;
 }
 
 textarea {
@@ -153,13 +153,13 @@ textarea {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: .1em;
-    background: #1E90FF;
+    background: #1ab188;
     color: #ffffff;
     transition: all 0.5s ease;
     -webkit-appearance: none;
 }
 .button:hover, .button:focus {
-    background: #0000CD;
+    background: #179b77;
 }
 
 .button-block {
@@ -171,6 +171,8 @@ textarea {
     margin-top: -20px;
     text-align: right;
 }
+
+
 
 
 
@@ -220,26 +222,26 @@ textarea {
     transition: box-shadow 0.1s linear
 }
 .file_upload.focus{
-    box-shadow: 0 0 5px rgba(0,30,255,0.4)
+    box-shadow: 0 0 5px #25b150
 }
 .file_upload > button{
-    background: #1E90FF;
+    background: #1ab188;
     transition: background 0.2s;
-    border: 1px solid rgba(0,0,0,0.1);
+    border: 1px solid #ffffff;
     border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
     border-radius: 2px;
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
     color: #fff;
-    text-shadow: #1E90FF 0 -1px 0;
+    text-shadow: #1ab188 0 -1px 0;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis
 }
 .file_upload:hover > button{
-    background: #1E90FF;
-    text-shadow: #1E90FF 0 -1px 0
+    background: #1ab188;
+    text-shadow: #1ab188 0 -1px 0
 }
 .file_upload:active > button{
-    background: #1E90FF;
-    box-shadow: 0 0 3px rgba(0,0,0,0.3) inset
+    background: #b1314e;
+    box-shadow: 0 0 3px #ffffff inset
 }
