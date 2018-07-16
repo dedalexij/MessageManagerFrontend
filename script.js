@@ -41,7 +41,8 @@ $('.tab a').on('click', function (e) {
     $(target).fadeIn(600);
 
 });
-
+$( ".tab a" ).trigger( "click" );
+//////////////////Кнопка отправления на регистрацию
 var FirstName = document.getElementById("FirstName");
 var LastName = document.getElementById("LastName");
 var Email = document.getElementById("Email");
@@ -54,13 +55,79 @@ const reg_confirm = () => {
         Email: Email.value,
         Password: Password.value
     })
-    console.log(registration_json)
 }
-RegBtn.onclick = reg_confirm;
+
+////////////////////клик через AJAX
+//
+//     function getajax (){
+//         alert("asdkfn")
+//         var registration_json = JSON.stringify({
+//             FirstName: FirstName.value,
+//             LastName: LastName.value,
+//             Email: Email.value,
+//             Password: Password.value
+//         }
+//         $.ajax({
+//             type: "POST",
+//             url: "http://192.168.1.67:5000/api/account/registration",
+//             // передача в качестве строки
+//             // кодирование выполняется "вручную"
+//             data: registration_json,
+//
+//         })
+//     }
+//     function aler() {
+//         alert("привет")
+//
+//     }
+//     $(function() {
+//         $('#asdf').on('click', aler);
+//     })
+
+////////////////////////////////
+///////////////////////////////
+
+//RegBtn.onclick = reg_confirm;
+// $("form").submit(function(e) {
+//     e.preventDefault(); // Избегать выполнения стандартной отправки формы.
+// });
+
+
+$('#reg_btn').on('click',function reg() {
+    fetch('https://192.168.1.67:5000/api/account/registration',
+        {
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            method: "POST",
+            body: JSON.stringify({
+                FirstName: FirstName.value,
+                LastName: LastName.value,
+                Email: Email.value,
+                Password: Password.value
+            })
+        })
+        .then(function (res) {
+            console.log(res)
+        })
+        .catch(function (res) {
+            console.log(res)
+        })
+}
+// $.ajax({
+// url: 'https://192.168.1.67:5000/api/account/registration',
+// type: "POST",
+// data: reg_confirm,
+// crossDomain: true,
+// success: function() { alert("Success"); },
+// error: function() { alert('Failed!'); },
+// contentType: "application/json; charset=utf-8"
+
+// });
 
 var LEmail = document.getElementById("LEmail");
 var LPassword = document.getElementById("LPassword");
-var LogBtn = document.getElementById("login_btn");
+var LogBtn = document.getElementById("login_btn1");
 const log_confirm = () => {
     var login_json = JSON.stringify({
         Email: LEmail.value,
@@ -68,8 +135,22 @@ const log_confirm = () => {
     })
     console.log(login_json)
 }
-LogBtn.onclick = log_confirm;
+//LogBtn.onclick = log_confirm;
 
-
-
+// function LogIn(){
+//
+//     var login_json = JSON.stringify({
+//             Email: LEmail.value,
+//             Password: LPassword.value
+//         })
+//     }
+//     $.ajax({
+//         type: "POST",
+//         url: "http://192.168.1.67:5000/api/account/login",
+//         // передача в качестве строки
+//         // кодирование выполняется "вручную"
+//         data: login_json,
+//
+//     })
+// };
 
