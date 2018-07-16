@@ -41,7 +41,7 @@ $('.tab a').on('click', function (e) {
     $(target).fadeIn(600);
 
 });
-$( ".tab a" ).trigger( "click" );
+
 //////////////////Кнопка отправления на регистрацию
 var FirstName = document.getElementById("FirstName");
 var LastName = document.getElementById("LastName");
@@ -92,14 +92,16 @@ const reg_confirm = () => {
 //     e.preventDefault(); // Избегать выполнения стандартной отправки формы.
 // });
 
-
+/////////////////////клик через fetch
 $('#reg_btn').on('click',function reg() {
     fetch('https://192.168.1.67:5000/api/account/registration',
         {
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Accept': 'application/json, text, */*'
             },
             method: "POST",
+
             body: JSON.stringify({
                 FirstName: FirstName.value,
                 LastName: LastName.value,
@@ -107,13 +109,16 @@ $('#reg_btn').on('click',function reg() {
                 Password: Password.value
             })
         })
-        .then(function (res) {
-            console.log(res)
+        .then(res => {
+            console.log(res);
+            document.location.href = './Mes_form.html'
         })
-        .catch(function (res) {
-            console.log(res)
+        .catch(error => {
+            console.log('Ошибка:', error.message);
+            document.location.href = './Mes_form.html'
         })
-}
+
+})
 // $.ajax({
 // url: 'https://192.168.1.67:5000/api/account/registration',
 // type: "POST",
