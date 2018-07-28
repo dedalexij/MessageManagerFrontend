@@ -3,8 +3,8 @@
 <head>
     <link rel="stylesheet" href="css/styles1.css" />
     <meta charset="UTF-8">
-    <link href='fonts/font.ttf' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link href='fonts/font.ttf' rel='stylesheet' type='text/css'> <!-- Подключение шрифта-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> <!-- Подключение ajax-->
 
 
 
@@ -14,15 +14,15 @@
 <body>
 
 
-<div class="form">
+<div class="form"> <!-- Форма для отправки сообщений -->
 
     <ul class="tab-group">
-        <li class="tab active"><a href="#email">Email</a></li>
-        <li class="tab"><a href="#sms">SMS</a></li>
+        <li class="tab active"><a href="#email">Email</a></li> <!-- Выбор вкладки с Email-->
+        <li class="tab"><a href="#sms">SMS</a></li><!-- Выбор вкладки с SMS-->
     </ul>
 
     <div class="tab-content">
-        <div id="email">
+        <div id="email"> <!-- Вкладка для отправки email-сообщения -->
             <h1>Enter the data</h1>
 
             <form action="http://192.168.1.67:5000/api/message/send/email" method="POST">
@@ -30,36 +30,36 @@
                     <label>
                         Email Address of the sender<span class="req">*</span>
                     </label>
-                    <input type="email" id="SenderAddress" name="SenderAddress" autocomplete="off"/>
+                    <input type="email" id="SenderAddress" name="SenderAddress" autocomplete="off"/> <!-- Поле ввода Email-адреса отправителя -->
                 </div>
 
                 <div class="field-wrap">
                     <label>
                         Email Address of the recipient<span class="req">*</span>
                     </label>
-                    <input type="email" id="RecipientAddresses" name="RecipientAddresses" multiple required autocomplete="off"/>
+                    <input type="email" id="RecipientAddresses" name="RecipientAddresses" multiple required autocomplete="off"/> <!-- Поле ввода Email-адреса получателя -->
                 </div>
 
                 <div class="field-wrap">
                     <label>
                         Theme<span class="req">*</span>
                     </label>
-                    <input type="text" id="SubjectText" name="SubjectText" required autocomplete="off"/>
+                    <input type="text" id="SubjectText" name="SubjectText" required autocomplete="off"/> <!-- Поле ввода темы сообщения -->
                 </div>
                 <div class="field-wrap">
                     <label>
                         Message<span class="req">*</span>
                     </label>
-                    <input type="text" id="BodyText" name="BodyText" required autocomplete="off"/>
+                    <input type="text" id="BodyText" name="BodyText" required autocomplete="off"/> <!-- Поле ввода текста сообщения -->
                 </div>
                 <div class="can-toggle">
                     <input id="a" name="Queue" type="checkbox">
                     <label for="a">
-                        <div class="can-toggle__switch" data-checked="NOW" data-unchecked="LATER"></div>
+                        <div class="can-toggle__switch" data-checked="NOW" data-unchecked="LATER"></div> <!-- Форма отложенной отправки или прямо сейчас -->
 
                     </label>
                 </div>
-                <div class="file_upload">
+                <div class="file_upload"> <!-- Выбор файла для прикрепления к сообщению -->
                     <button type="button">Choose</button>
                     <div>File not selected</div>
                     <input type="file" name="File">
@@ -72,7 +72,7 @@
 
         </div>
 
-        <div id="sms">
+        <div id="sms"> <!-- Вкладка для отправки sms-сообщения -->
             <h1>Enter the data</h1>
 
             <form action="http://192.168.1.67:5000/api/message/send/sms" method="POST">
@@ -81,16 +81,22 @@
                     <label>
                         Input phone of reciever<span class="req">*</span>
                     </label>
-                    <input type="tel" multiple pattern="+7[0-9]{3}[0-9]{3}[0-9]{2}[0-9]{2}" id="RecipientNumbers" name="RecipientNumbers" required autocomplete="off"/>
+                    <input type="tel" multiple pattern="+7[0-9]{3}[0-9]{3}[0-9]{2}[0-9]{2}" id="RecipientNumbers" name="RecipientNumbers" required autocomplete="off"/> <!-- Поле для ввода номера телефона получателя -->
                 </div>
                 <div class="field-wrap">
                     <label>
                         Message<span class="req">*</span>
                     </label>
-                    <input type="text" id="MessageText" name="MessageText" required autocomplete="off"/>
+                    <input type="text" id="MessageText" name="MessageText" required autocomplete="off"/> <!-- Поле для ввода текста сообщения -->
                 </div>
 
+                <div class="can-toggle">
+                    <input id="a" name="Queue" type="checkbox">
+                    <label for="a">
+                        <div class="can-toggle__switch" data-checked="NOW" data-unchecked="LATER"></div> <!-- Форма отложенной отправки или прямо сейчас -->
 
+                    </label>
+                </div>
 
                 <input class="button button-block" type="submit" value="SEND" id="SmsSenderBtn"/></input>
 

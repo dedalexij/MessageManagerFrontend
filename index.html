@@ -3,9 +3,9 @@
 <head>
     <link rel="stylesheet" href="css/styles.css" />
     <meta charset="UTF-8">
-    <link href='fonts/font.ttf' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <link href='fonts/font.ttf' rel='stylesheet' type='text/css'> <!-- Подключение шрифта-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> <!-- Подключение ajax-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> <!-- Подключение jQuery-->
 
 
 
@@ -15,32 +15,32 @@
 <body>
 
 
-<div class="form">
+<div class="form"> <!-- Форма регистрации и входа -->
 
     <ul class="tab-group">
-        <li class="tab active"><a href="#signup">Sign Up</a></li>
-        <li class="tab"><a href="#login">Log In</a></li>
+        <li class="tab active"><a href="#signup">Sign Up</a></li> <!-- Выбор вкладки с регистрацией-->
+        <li class="tab"><a href="#login">Log In</a></li> <!-- Выбор вкладки с логинизацией-->
     </ul>
 
     <div class="tab-content">
-        <div id="signup">
+        <div id="signup"> <!-- Вкладка регистрации-->
             <h1>Sign Up for Free</h1>
 
-            <form action="http://192.168.1.67:5000/api/account/registration" method="POST">
+            <form>
 
                 <div class="top-row">
                     <div class="field-wrap">
                         <label>
                             First Name<span class="req">*</span>
                         </label>
-                        <input type="text" id="FirstName" name="FirstName" value="asdf@adf.ru" autocomplete="off" />
+                        <input type="text" id="FirstName" name="FirstName"  autocomplete="off" /> <!-- Поле ввода имени -->
                     </div>
 
                     <div class="field-wrap">
                         <label>
                             Last Name<span class="req">*</span>
                         </label>
-                        <input type="text" id="LastName" name="LastName" value="asdf@adf.ru" required autocomplete="off"/>
+                        <input type="text" id="LastName" name="LastName"  required autocomplete="off"/> <!-- Поле ввода фамилии -->
                     </div>
                 </div>
 
@@ -48,19 +48,16 @@
                     <label>
                         Email Address<span class="req">*</span>
                     </label>
-                    <input type="email" id="Email" name="Email" value="asdf@adf.ru"  required autocomplete="off"/>
+                    <input type="email" id="Email" name="Email" required autocomplete="off"/> <!-- Поле ввода email -->
                 </div>
 
                 <div class="field-wrap">
                     <label>
                         Set A Password<span class="req">*</span>
                     </label>
-                    <input type="password" id="Password" name="Password" value="asdf@adf.ru"  required autocomplete="off"/>
+                    <input type="password" id="Password" name="Password"  required autocomplete="off"/> <!-- Поле ввода пароля -->
                 </div>
 
-                <!--input type="submit"  class="button button-block" id = "reg_btn" value="Get Started">  </input>
-                <a href="Mes_form.html" class="button button-block" align="center" id = "reg_but">  Reg </a>
-                <input type="button" onClick="registration()" value="Reg IN" align="center" id="asdf">  </input-->
                 <button class="button button-block"  id="reg_btn" > Get Started </button>
 
 
@@ -71,7 +68,7 @@
         <div id="login">
             <h1>Welcome Back!</h1>
 
-            <form action="http://192.168.1.67:5000/api/account/login"  method="POST">
+            <form>
 
                 <div class="field-wrap">
                     <label>
@@ -87,11 +84,8 @@
                     <input type="password" id="LPassword" name="Password" autocomplete="off"/>
                 </div>
 
-                <p class="forgot"><a href="#">Forgot Password?</a></p>
-                <input type="submit"    class="button button-block" value="Log in" >  </input>
-                <a href="Mes_form.html" class="button button-block" align="center" id = "login_btn">  Log In </a>
-                <input type="button" onclick="registration()" class="button button-block" align="center" id = "login_btn1">  Log In </input>
 
+                <button class="button button-block"  id="login_btn" >Log in </button>
             </form>
 
         </div>
