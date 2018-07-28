@@ -149,13 +149,13 @@ $('#login_btn').on('click',function reg() {
             return response.json()
         })
         .then(data => {
-            // document.location.href = `./Mes_form.html`
+            document.location.href = `./Mes_form.html`
         })
         .catch(error => {
             console.log('Ошибка:', error.message);
             alert("Error");
         })
-    //window.localStorage.setItem('token', jsonData.token); -хранение в переменной token моего токена для всего документа
+    window.localStorage.setItem('token', jsonData.token)// -хранение в переменной token моего токена для всего документа
     function changeurl(){eval(self.location="/Mes_form.html");}
     window.setTimeout("changeurl();",3000);
 

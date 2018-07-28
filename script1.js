@@ -86,7 +86,7 @@ $( window ).resize(function(){
 
 var Phone = document.getElementById("Phone");
 var SMessage = document.getElementById("SmsMessage");
-var SmsSenderBtn = document.getElementById("SmsSenderBtn");
+//var SmsSenderBtn = document.getElementById("SmsSenderBtn");
 var Guid = function guid() {
     function s4() {
         return Math.floor((1 + Math.random()) * 0x10000)
@@ -95,21 +95,42 @@ var Guid = function guid() {
     }
     return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
 }
-const SmsSenderConfirm = () => {
-    var sms_message_json = JSON.stringify({
-        Phone: Phone.value,
-        Message: SMessage.value,
-        Guid: Guid.value
-    })
-    console.log(sms_message_json)
-}
-SmsSenderBtn.onclick = SmsSenderConfirm;
+
+
+
+$('#SmsSenderBtn').on('click',function reg() {
+    fetch('http://localhost:5000/api/message/send/sms',
+        {
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'text'
+            },
+            method: "POST",
+            redirect: "follow",
+
+            body: JSON.stringify({
+                Phone: Phone.value,
+                Message: SMessage.value,
+                Guid: Guid.value
+            })
+        })
+        .then(response => {
+            console.log(response);
+            return response.json()
+        })
+        .catch(error => {
+            console.log('Ошибка:', error.message);
+            alert("Error");
+        })
+
+
+})
 
 var SenderEmail = document.getElementById("SenderEmail");
 var RecipientEmail = document.getElementById("RecipientEmail");
 var Theme = document.getElementById("Theme");
 var EMessage = document.getElementById("Message");
-var EmailSenderBtn = document.getElementById("EmailSenderBtn");
+// EmailSenderBtn = document.getElementById("EmailSenderBtn");
 var Guid = function guid() {
     function s4() {
         return Math.floor((1 + Math.random()) * 0x10000)
@@ -118,14 +139,36 @@ var Guid = function guid() {
     }
     return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
 }
-const EmailSenderConfirm = () => {
-    var email_message_json = JSON.stringify({
-        SenderEmail: SenderEmail.value,
-        RecipientEmail: RecipientEmail.value,
-        Theme: Theme.value,
-        EMessage: EMessage.value,
-        Guid: Guid.value
-    })
-    console.log(email_message_json)
+nsole.log(email_message_json)
 }
-EmailSenderBtn.onclick = EmailSenderConfirm;
+
+
+$('#EmailSenderBtn').on('click',function reg() {
+    fetch('http://localhost:5000/api/message/send/email',
+        {
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'text'
+            },
+            method: "POST",
+            redirect: "follow",
+
+            body: JSON.stringify({
+                SenderEmail: SenderEmail.value,
+                RecipientEmail: RecipientEmail.value,
+                Theme: Theme.value,
+                EMessage: EMessage.value,
+                Guid: Guid.value
+            })
+        })
+        .then(response => {
+            console.log(response);
+            return response.json()
+        })
+        .catch(error => {
+            console.log('Ошибка:', error.message);
+            alert("Error");
+        })
+
+
+})
