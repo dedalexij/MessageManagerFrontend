@@ -26,7 +26,7 @@ a:hover {
     background: rgba(19, 35, 47, 0.9);
     padding: 50px;
     max-width: 600px;
-    margin: auto;
+    margin: 100px auto;
     border-radius: 4px;
     box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
 }
@@ -185,7 +185,7 @@ textarea {
     font-size: 1em;        /* example */
     height: 2em;           /* example */
     line-height: 2em;       /* the same as height */
-    margin: 50px auto;
+    margin: 40px auto;
 }
 .file_upload > button{
     float: right;
@@ -251,7 +251,7 @@ textarea {
 
 .can-toggle {
     position: relative;
-    margin:  auto;
+    margin: 40px 180px;
 }
 .can-toggle *, .can-toggle *:before, .can-toggle *:after {
     -moz-box-sizing: border-box;
@@ -328,19 +328,19 @@ textarea {
     color: #6a6a6a;
 }
 .can-toggle input[type="checkbox"]:checked ~ label:hover {
-    color: #55bc49;
+    color: #1ab188;
 }
 .can-toggle input[type="checkbox"]:checked ~ label .can-toggle__switch {
-    background-color: #70c767;
+    background-color: #1ab188;
 }
 .can-toggle input[type="checkbox"]:checked ~ label .can-toggle__switch:after {
-    color: #4fb743;
+    color: #1ab188;
 }
 .can-toggle input[type="checkbox"]:checked:focus ~ label .can-toggle__switch, .can-toggle input[type="checkbox"]:checked:hover ~ label .can-toggle__switch {
-    background-color: #5fc054;
+    background-color: #1ab188;
 }
 .can-toggle input[type="checkbox"]:checked:focus ~ label .can-toggle__switch:after, .can-toggle input[type="checkbox"]:checked:hover ~ label .can-toggle__switch:after {
-    color: #47a43d;
+    color: #1ab188;
 }
 .can-toggle label .can-toggle__label-text {
     -webkit-flex: 1;
@@ -353,7 +353,7 @@ textarea {
     background: #848484;
 }
 .can-toggle label .can-toggle__switch:before {
-    color: rgba(255, 255, 255, 0.5);
+    color: #ffffff;
 }
 .can-toggle label .can-toggle__switch:after {
     -webkit-transition: -webkit-transform 0.3s cubic-bezier(0, 1, 0.5, 1);
