@@ -1,5 +1,5 @@
 $('.form').find('input, textarea').on('keyup blur focus', function (e) {
-
+    console.log('form focus');
     var $this = $(this),
         label = $this.prev('label');
 
@@ -28,7 +28,7 @@ $('.form').find('input, textarea').on('keyup blur focus', function (e) {
 });
 
 $('.tab a').on('click', function (e) {
-
+    console.log('tab click');
     e.preventDefault();
 
     $(this).parent().addClass('active');
@@ -56,6 +56,130 @@ const reg_confirm = () => {
         Password: Password.value
     })
 }
+
+
+/////////////////////клик через fetch
+$('#reg_btn').on('click',function reg() {
+    console.log('registrtion in process');
+    fetch('http://localhost:33828/api/account/registration',
+        {
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json, text, */*'
+            },
+            method: "POST",
+            body: JSON.stringify({
+                FirstName: FirstName.value,
+                LastName: LastName.value,
+                Email: Email.value,
+                Password: Password.value
+            })
+        })
+        .then(res => {
+            console.log(res);
+            console.log('Я тут!!');
+            // document.location.href = './Mes_form.html'
+        })
+        .catch(error => {
+            console.log('Ошибка:', error.message);
+            console.log('Я тут в ошибке!!');
+            // document.location.href = './Mes_form.html'
+        })
+})
+
+// fetch('http://localhost:33828/api/account/registration',
+//     {
+//         headers: {
+//             'Content-Type': 'application/json',
+//             'Accept': 'application/json, text, */*'
+//         },
+//         method: "POST",
+//         body: JSON.stringify({
+//             FirstName: FirstName.value,
+//             LastName: LastName.value,
+//             Email: Email.value,
+//             Password: Password.value
+//         })
+//     })
+//     .then(res => {
+//         console.log(res);
+//         console.log('Я тут!!');
+//         // document.location.href = './Mes_form.html'
+//     })
+//     .catch(error => {
+//         console.log('Ошибка:', error.message);
+//         console.log('Я тут в ошибке!!');
+//         // document.location.href = './Mes_form.html'
+//     })
+
+
+var LEmail = document.getElementById("LEmail");
+var LPassword = document.getElementById("LPassword");
+var LogBtn = document.getElementById("login_btn1");
+const log_confirm = () => {
+    var login_json = JSON.stringify({
+        Email: LEmail.value,
+        Password: LPassword.value
+    })
+    console.log(login_json)
+}
+//LogBtn.onclick = log_confirm;
+
+
+
+
+$('#login_btn').on('click',function reg() {
+    fetch('http://localhost:5000/api/account/login',
+        {
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'text'
+            },
+            method: "POST",
+            redirect: "follow",
+
+            body: JSON.stringify({
+                Email: LEmail.value,
+                Password: LPassword.value
+            })
+        })
+        .then(response => {
+            console.log(response);
+            // localStorage
+            return response.json()
+        })
+        .then(data => {
+            // document.location.href = `./Mes_form.html`
+        })
+        .catch(error => {
+            console.log('Ошибка:', error.message);
+            alert("Error");
+        })
+    //window.localStorage.setItem('token', jsonData.token); -хранение в переменной token моего токена для всего документа
+    function changeurl(){eval(self.location="/Mes_form.html");}
+    window.setTimeout("changeurl();",3000);
+
+})
+
+
+
+
+// function LogIn(){
+//
+//     var login_json = JSON.stringify({
+//             Email: LEmail.value,
+//             Password: LPassword.value
+//         })
+//     }
+//     $.ajax({
+//         type: "POST",
+//         url: "http://192.168.1.67:5000/api/account/login",
+//         // передача в качестве строки
+//         // кодирование выполняется "вручную"
+//         data: login_json,
+//
+//     })
+// };
 
 ////////////////////клик через AJAX
 //
@@ -91,34 +215,6 @@ const reg_confirm = () => {
 // $("form").submit(function(e) {
 //     e.preventDefault(); // Избегать выполнения стандартной отправки формы.
 // });
-
-/////////////////////клик через fetch
-$('#reg_btn').on('click',function reg() {
-    fetch('https://192.168.1.67:5000/api/account/registration',
-        {
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json, text, */*'
-            },
-            method: "POST",
-
-            body: JSON.stringify({
-                FirstName: FirstName.value,
-                LastName: LastName.value,
-                Email: Email.value,
-                Password: Password.value
-            })
-        })
-        .then(res => {
-            console.log(res);
-            document.location.href = './Mes_form.html'
-        })
-        .catch(error => {
-            console.log('Ошибка:', error.message);
-            document.location.href = './Mes_form.html'
-        })
-
-})
 // $.ajax({
 // url: 'https://192.168.1.67:5000/api/account/registration',
 // type: "POST",
@@ -129,33 +225,3 @@ $('#reg_btn').on('click',function reg() {
 // contentType: "application/json; charset=utf-8"
 
 // });
-
-var LEmail = document.getElementById("LEmail");
-var LPassword = document.getElementById("LPassword");
-var LogBtn = document.getElementById("login_btn1");
-const log_confirm = () => {
-    var login_json = JSON.stringify({
-        Email: LEmail.value,
-        Password: LPassword.value
-    })
-    console.log(login_json)
-}
-//LogBtn.onclick = log_confirm;
-
-// function LogIn(){
-//
-//     var login_json = JSON.stringify({
-//             Email: LEmail.value,
-//             Password: LPassword.value
-//         })
-//     }
-//     $.ajax({
-//         type: "POST",
-//         url: "http://192.168.1.67:5000/api/account/login",
-//         // передача в качестве строки
-//         // кодирование выполняется "вручную"
-//         data: login_json,
-//
-//     })
-// };
-
